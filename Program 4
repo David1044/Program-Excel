@@ -1,0 +1,35 @@
+Sub extraerDatos()
+Dim canal As Long
+Dim descripciondeAarticulo As Long
+Dim plantadeOrigen As Long
+Dim direccion As Long
+
+
+Dim nombreDeCita As String
+Dim TipoDeCliente As String
+Dim numdeCliente As Double
+Dim descripcion As Double
+Dim plantadeOrigen As String
+Dim destino As Double
+Dim fechaDeEntrega As Date
+Dim tipoDeUnidad As String
+Dim folio As Double
+
+
+
+ultiFilaDatos = Sheets("REPORTE PEDIDOS").Range("C" & Rows.Count).End(x1Up).Row
+
+For cont = 8 To UltFilaDatos
+    nombreCompleto = Sheets("").Cells(cont, 3)
+    fechaIngreso = Sheets("").Cells(cont, 4)
+    salario = Sheets("").Cells(cont, 5)
+
+If salario > 1200 And Year(fechaIngreso) = 2014 Then
+   ultFilaEmpleados = Sheets("").Range("C" & Rows.Count).End(x1Up).Row
+   Sheets("").Cells(nombreDeCita + 1, 3) = numdeCliente
+   Sheets("").Cells(nombreDeCita + 1, 4) = descripcion
+   Sheets("").Cells(nombreDeCita + 1, 5) = plantadeOrigen
+    Sheets("").Cells(nombreDeCita + 1, 6) = destino
+   Sheets("").Cells(nombreDeCita + 1, 7) = fechaDeEntrega
+   Sheets("").Cells(nombreDeCita + 1, 8) = tipoDeUunidad
+    Sheets("").Cells(nombreDeCita  + 1, 9) = folio 
