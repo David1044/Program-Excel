@@ -1,0 +1,46 @@
+Sub extraerDatos()
+Dim UltFilaDatos As Long
+Dim ultFilaEmpleados As Long
+
+Dim nombreDeCita As String
+Dim TipoDeCliente As String
+Dim numdeCliente As Double
+Dim descripcion As Double
+Dim plantadeOrigen As String
+Dim destino As Double
+Dim fechaDeEntrega As Date
+Dim tipoDeUnidad As String
+Dim folio As Double
+
+
+
+UltFilaDatos = Sheets("REPORTE PEDIDOS").Range("A" & Rows.Count).End(x1Up).Row
+
+For cont = 6 To UltFilaDatos
+    TipoDeCliente = Sheets("REPORTE PEDIDOS").Cells(cont, 1)
+    nombreDeCita = Sheets("REPORTE PEDIDOS").Cells(cont, 2)
+    numdeCliente = Sheets("REPORTE PEDIDOS").Cells(cont, 3)
+     descripcion = Sheets("REPORTE PEDIDOS").Cells(cont, 4)
+     plantadeOrigen = Sheets("REPORTE PEDIDOS").Cells(cont, 5)
+    destino = Sheets("REPORTE PEDIDOS").Cells(cont, 6)
+   fechaDeEntrega = Sheets("REPORTE PEDIDOS").Cells(cont, 7)
+  tipoDeUnidad = Sheets("REPORTE PEDIDOS").Cells(cont, 8)
+  folio = Sheets("REPORTE PEDIDOS").Cells(cont, 9)
+
+
+If TipoDeCliente = MAYORISTAS Then
+   ultFilaEmpleados = Sheets("MAYORISTAS").Range("A" & Rows.Count).End(x1Up).Row
+   Sheets("MAYORISTAS").Cells(nombreDeCita + 1, 2) = numdeCliente
+   Sheets("MAYORISTAS").Cells(nombreDeCita + 1, 3) = descripcion
+   Sheets("MAYORISTAS").Cells(nombreDeCita + 1, 4) = plantadeOrigen
+    Sheets("MAYORISTAS").Cells(nombreDeCita + 1, 5) = destino
+   Sheets("MAYORISTAS").Cells(nombreDeCita + 1, 6) = fechaDeEntrega
+   Sheets("MAYORISTAS").Cells(nombreDeCita + 1, 7) = tipoDeUunidad
+    Sheets("MAYORISTAS").Cells(nombreDeCita + 1, 8) = folio
+    
+    
+   End If
+Next cont
+   
+
+End Sub
