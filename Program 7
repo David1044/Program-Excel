@@ -1,0 +1,36 @@
+Sub Ciclos()
+
+Dim pregunta As Integer
+Dim ColumnaTrabajo
+Dim i As Integer
+Dim UltimaFila As Integer
+    ColumnaTrabajo = 2
+
+    'Detecta la última fila del rango de datos en la hoja activa
+    UltimaFila = Sheets("Mayoristas").Cells(Rows.Count, ColumnaTrabajo).End(xlUp).Row
+
+    For i = 5 To UltimaFila
+    
+pregunta = MsgBox("¿Cliente liberado?", vbYesNoCancel + vbInformation, "pruebaTMS3")
+
+Select Case pregunta
+Case Is = 6
+    
+        If Cells(i, ColumnaTrabajo).Value > 0 Then
+            Cells(i, ColumnaTrabajo + 3).Value = "Mayor que cero"
+        End If
+        
+        
+Case Is = 7
+For j = Cells(i, ColumnaTrabajo + 1).End(xlUp).Row To 4 Step -1
+
+If LCase(Cells(i, "A")) = LCase(valor) Then
+Rows(i).Delete
+End If
+Next
+
+Case Else
+End Select
+    Next i
+    
+End Sub
