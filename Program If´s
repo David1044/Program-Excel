@@ -1,0 +1,27 @@
+Sub total()
+Dim nom, obse As String
+Dim vrcom, desc, tot As Double
+nom = Range("b1").Value
+vrcom = Range("b2").Value
+If vrcom >= 100000 Then
+des = vrcom * 10 / 100
+Else
+desc = vrcom * 5 / 100
+End If
+tot = vrcom - desc
+If tot >= 800000 Then
+obse = "Trailer"
+Else
+obse = "Thorton"
+End If
+
+ Range("b3").Value = desc
+  Range("b4").Value = tot
+   Range("b5").Value = obse
+ 
+    
+    
+    
+    
+
+End Sub
