@@ -1,0 +1,23 @@
+Sub total()
+Dim nom, obse As String
+Dim vrcom, desc, tot As Double
+nom = Range("b1").Value
+tot = Range("a2").Value
+
+If tot <= 3.5 Then
+obse = "Camioneta 3.5"
+ElseIf tot <= 5 Then
+obse = "Camioneta 5"
+ElseIf tot <= 8 Then
+obse = "Rabon"
+ElseIf tot <= 15 Then
+obse = "Thorton"
+ElseIf tot <= 28 Then
+obse = "Trailer"
+ElseIf tot >= 28.0001 Then
+obse = "No hay espacio suficiente en este trailer"
+Else
+obse = "Camión lleno"
+
+End If
+
