@@ -1,0 +1,52 @@
+Sub total()
+Dim nom, obse, ValNew  As String
+Dim vrcom, desc, sob, tot, nto As Double
+nom = Range("b1").Value
+tot = Range("a2").Value
+
+If tot <= 3.5 Then
+obse = "Camioneta 3.5"
+ElseIf tot <= 5 Then
+obse = "Camioneta 5"
+ElseIf tot <= 8 Then
+obse = "Rabon"
+ElseIf tot <= 15 Then
+obse = "Thorton"
+ElseIf tot <= 28 Then
+obse = "Trailer"
+ElseIf tot >= 28.0001 Then
+obse = "Trailer"
+sob = tot - 28
+End If
+
+If sob <= 3.5 Then
+ValNew = "Camioneta 3.5"
+ElseIf sob <= 5 Then
+ValNew = "Camioneta 5"
+ElseIf sob <= 8 Then
+ValNew = "Rabon"
+ElseIf sob <= 15 Then
+ValNew = "Thorton"
+ElseIf sob <= 28 Then
+ValNew = "Trailer"
+ElseIf sob >= 28.0001 Then
+ValNew = "Se necesita un nuevo calculo"
+Else
+ValNew = "Camión lleno"
+ 
+
+End If
+
+
+
+
+
+
+
+
+ 
+ 
+   Range("b2").Value = obse
+   Range("c2").Value = sob
+   Range("d2").Value = ValNew
+   
