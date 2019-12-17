@@ -1,27 +1,24 @@
 Sub extraerDatos()
-Dim ulFilaDatos As Long
-Dim ultFilaEnpleados As Long
+Dim ultFilaDatos As Long
+Dim ultFilaEmpleados As Long
 
 Dim nombreCompleto As String
 Dim fechaIngreso As Date
 Dim salario As Double
 Dim cont As Long
 
-ultiFilaDatos = Sheets("Reto40 Excel").Range("C" & Rows.Count).End(x1Up).Row
+ultFilaDatos = Sheets("Reto40Excel").Range("C" & Rows.Count).End(xlUp).Row
 
-For cont = 8 To UltFilaDatos
-    nombreCompleto = Sheets("").Cells(cont, 3)
-    fechaIngreso = Sheets("").Cells(cont, 4)
-    salario = Sheets("").Cells(cont, 5)
+For cont = 8 To ultFilaDatos
+nombreCompleto = Sheets("Reto40Excel").Cells(cont, 3)
+fechaIngreso = Sheets("Reto40Excel").Cells(cont, 4)
+salario = Sheets("Reto40Excel").Cells(cont, 5)
 
 If salario > 1200 And Year(fechaIngreso) = 2014 Then
-   ultFilaEmpleados = Sheets("").Range("C" & Rows.Count).End(x1Up).Row
-   Sheets("").Cells(ultFilaEmpleados + 1, 3) = nombreCompleto
-   Sheets("").Cells(ultiFilaEmpleados + 1, 4) = fechaIngreso
-   Sheets("").Cells(ultiFilaEmpleados + 1, 5) = salario
-   
-   End If
+ultFilaEmpleados = Sheets("Salarios2014").Range("C" & Rows.Count).End(xlUp).Row
+Sheets("Salarios2014").Cells(ultFilaEmpleados + 1, 3) = nombreCompleto
+Sheets("Salarios2014").Cells(ultFilaEmpleados + 1, 4) = fechaIngreso
+Sheets("Salarios2014").Cells(ultFilaEmpleados + 1, 5) = salario
+End If
 Next cont
-   
-
 End Sub
